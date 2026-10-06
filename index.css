@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-ink: #0D0D0D;
+  --color-ink-soft: #171717;
+  --color-ink-muted: #242220;
+  --color-soft-white: #FAF8F5;
+  --color-stone: #E7E1D8;
+  --color-stone-light: #F3EFE9;
+  --color-grey: #8A8580;
+  --color-grey-light: #B5B0AA;
+  --color-brass: #A88B5C;
+  --color-brass-light: #C4AA7D;
+  --color-brass-dim: #7C6743;
+}
+
+:root {
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #0D0D0D;
+  color: #FAF8F5;
+  selection-background-color: #A88B5C;
+  selection-color: #FAF8F5;
+}
+
+::selection {
+  background-color: #A88B5C;
+  color: #0D0D0D;
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2825;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A88B5C;
+}
+
+/* Editorial Serif Utility */
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-body {
+  font-family: var(--font-sans);
+}
+
+/* Subtle Film Grain Noise Overlay */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Brass hairline border */
+.brass-border {
+  border-color: rgba(168, 139, 92, 0.28);
+}
+.brass-border-subtle {
+  border-color: rgba(168, 139, 92, 0.15);
+}
+
+/* Smooth transitions */
+.transition-luxury {
+  transition-duration: 900ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Infinite marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
